@@ -8,6 +8,9 @@
         using System.Diagnostics;
 
         // ---------------------- Answer Class ----------------------
+        #region Answer Class
+
+       
         public class Answer
         {
             public int AnswerId { get; set; }
@@ -24,7 +27,7 @@
                 return $"[{AnswerId}] {AnswerText}";
             }
         }
-
+        #endregion
         // ---------------------- Base Question ----------------------
         public abstract class Question : ICloneable, IComparable<Question>
         {
