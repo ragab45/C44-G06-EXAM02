@@ -93,7 +93,7 @@
             }
         }
         #endregion
-        #region Base Exam
+        #region Base Exam  
 
       
         public abstract class Exam
@@ -270,7 +270,7 @@
             }
         }
 
-        // ---------------------- Main Program ----------------------
+        #region  Main Program 
         class Program
         {
             static void Main()
@@ -376,6 +376,8 @@
                 exam.ShowExam();
             }
         }
+
+        #endregion
 
         #endregion
     }
