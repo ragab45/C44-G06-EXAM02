@@ -7,7 +7,10 @@
         using System.Collections.Generic;
         using System.Diagnostics;
 
-        // ---------------------- Answer Class ----------------------
+        
+        #region Answer Class
+
+       
         public class Answer
         {
             public int AnswerId { get; set; }
@@ -24,8 +27,10 @@
                 return $"[{AnswerId}] {AnswerText}";
             }
         }
+        #endregion
+        #region Base Question
 
-        // ---------------------- Base Question ----------------------
+       
         public abstract class Question : ICloneable, IComparable<Question>
         {
             public string Header { get; set; }
@@ -56,8 +61,10 @@
                 return $"{Header} - {Body} (Mark: {Mark})";
             }
         }
+        #endregion
+        #region  Derived Questions  
 
-        // ---------------------- Derived Questions ----------------------
+       
         public class TrueFalseQuestion : Question
         {
             public TrueFalseQuestion(string header, string body, int mark) : base(header, body, mark)
@@ -85,8 +92,10 @@
                     Console.WriteLine(ans);
             }
         }
+        #endregion
+        #region Base Exam  
 
-        // ---------------------- Base Exam ----------------------
+      
         public abstract class Exam
         {
             public int Time { get; set; }
@@ -102,9 +111,10 @@
 
             public abstract void ShowExam();
         }
+        #endregion
+#region Derived Exams
 
-        // ---------------------- Derived Exams ----------------------
-        public class FinalExam : Exam
+	       public class FinalExam : Exam
         {
             public FinalExam(int time, int numQ) : base(time, numQ) { }
 
@@ -235,8 +245,8 @@
                 }
             }
         }
+        #endregion 
 
-        // ---------------------- Subject ----------------------
         public class Subject
         {
             public int SubjectId { get; set; }
@@ -260,7 +270,7 @@
             }
         }
 
-        // ---------------------- Main Program ----------------------
+        #region  Main Program 
         class Program
         {
             static void Main()
@@ -366,6 +376,8 @@
                 exam.ShowExam();
             }
         }
+
+        #endregion
 
         #endregion
     }
